@@ -399,8 +399,7 @@ section {
     }
 
     &::after {
-      content: "";
-      @apply absolute bottom-0 left-0 h-1 w-1/2 bg-[#cd7c2e];
+      content: none;
     }
   }
 

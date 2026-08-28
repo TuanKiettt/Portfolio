@@ -1,11 +1,11 @@
 const navLinks = [
   {
-    name: "Projects",
-    link: "#work",
-  },
-  {
     name: "About Me",
     link: "#about",
+  },
+  {
+    name: "Projects",
+    link: "#work",
   },
   {
     name: "Skills",
@@ -185,16 +185,6 @@ const expLogos = [
 
 
 const socialImgs = [
-  {
-    name: "insta",
-    imgPath: "/images/insta.png",
-    url: "https://www.instagram.com/entikay.644/",
-  },
-  {
-    name: "fb",
-    imgPath: "/images/fb.png",
-    url: "https://www.facebook.com/nguyen.tuan.kiet.467412",
-  },
   {
     name: "linkedin",
     imgPath: "/images/linkedin.png",
