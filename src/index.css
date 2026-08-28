@@ -51,6 +51,82 @@ section {
     @apply px-5 md:px-10 md:mt-40 mt-20;
   }
 
+  .intro-section {
+    @apply flex justify-center scroll-mt-24 md:scroll-mt-32;
+  }
+
+  .intro-content {
+    @apply w-full max-w-5xl border-y border-white-50/10 py-12 md:py-16;
+  }
+
+  .about-layout {
+    @apply grid grid-cols-1 items-center gap-10 md:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] md:gap-14;
+  }
+
+  .about-portrait {
+    @apply relative aspect-[4/5] w-full max-w-[280px] justify-self-center overflow-hidden rounded-2xl border border-[#cd7c2e]/40 bg-black-200 shadow-[0_0_35px_rgba(205,124,46,0.16)] md:max-w-none md:justify-self-stretch;
+  }
+
+  .about-portrait::after {
+    content: "";
+    @apply pointer-events-none absolute inset-3 rounded-xl border border-white/20;
+  }
+
+  .about-portrait img {
+    @apply h-full w-full object-cover object-top grayscale-[15%] transition duration-700 hover:scale-105 hover:grayscale-0;
+  }
+
+  .about-copy {
+    @apply min-w-0 md:py-4;
+  }
+
+  .intro-eyebrow {
+    @apply mb-5 text-sm uppercase tracking-[0.25em] text-[#cd7c2e];
+  }
+
+  .intro-content h2 {
+    @apply max-w-full whitespace-normal text-2xl font-semibold leading-tight text-white md:text-4xl lg:text-5xl;
+  }
+
+  .intro-copy {
+    @apply mt-6 max-w-4xl text-base leading-8 text-white-50 md:text-lg;
+  }
+
+  .floating-robot {
+    @apply fixed left-[8vw] top-[24vh] z-30 flex size-14 items-center justify-center rounded-2xl border border-[#cd7c2e]/50 bg-black-100/90 text-[#cd7c2e] shadow-[0_0_28px_rgba(205,124,46,0.3)] backdrop-blur-sm;
+    will-change: transform;
+    cursor: pointer;
+  }
+
+  .floating-robot:hover {
+    @apply border-[#cd7c2e] shadow-[0_0_36px_rgba(205,124,46,0.5)];
+  }
+
+  .floating-robot:focus-visible {
+    @apply outline-2 outline-offset-4 outline-[#4cc9f0];
+  }
+
+  .floating-robot svg {
+    @apply size-8;
+  }
+
+  .floating-robot__antenna {
+    @apply absolute -top-2 left-1/2 size-1.5 -translate-x-1/2 rounded-full bg-[#cd7c2e] shadow-[0_0_10px_#cd7c2e];
+  }
+
+  .floating-robot__antenna::after {
+    content: "";
+    @apply absolute left-1/2 top-1.5 h-2 w-px -translate-x-1/2 bg-[#cd7c2e]/70;
+  }
+
+  .floating-robot__signal {
+    @apply absolute -right-1 -top-1 size-2 rounded-full bg-[#4cc9f0] shadow-[0_0_12px_#4cc9f0];
+  }
+
+  .floating-robot__reply {
+    @apply absolute left-1/2 top-full mt-3 w-48 -translate-x-1/2 rounded-lg border border-white-50/15 bg-black-100/95 px-3 py-2 text-center text-xs leading-5 text-white-50 shadow-xl;
+  }
+
   .mt-responsive {
     @apply xl:mt-20 md:mt-0 mt-40;
   }
@@ -165,10 +241,23 @@ section {
       @apply h-full flex flex-col justify-between xl:w-[60%];
 
       .image-wrapper {
-        @apply xl:h-[70vh] md:h-[50vh] h-96 relative;
+        @apply xl:h-[70vh] md:h-[50vh] h-96 relative overflow-hidden rounded-xl border border-transparent transition duration-500 hover:border-[#4cc9f0]/70 hover:shadow-[0_0_28px_rgba(76,201,240,0.25)];
 
         img {
-          @apply w-full h-full object-cover rounded-xl absolute inset-0;
+          @apply w-full h-full object-contain rounded-xl absolute inset-0 transition duration-500 ease-out hover:scale-105;
+        }
+      }
+
+      .ai-task-frame {
+        @apply border-transparent bg-black p-2;
+        background-image: none;
+
+        &:hover {
+          @apply border-transparent shadow-none;
+        }
+
+        img {
+          @apply border border-white/10;
         }
       }
 
@@ -189,11 +278,11 @@ section {
       @apply flex md:flex-row flex-col xl:flex-col gap-10 xl:w-[40%];
 
       .image-wrapper {
-        @apply xl:h-[37vh] md:h-52 lg:h-72 h-64 relative rounded-xl xl:px-5 2xl:px-12 py-0;
+        @apply xl:h-[37vh] md:h-52 lg:h-72 h-64 relative overflow-hidden rounded-xl border border-transparent transition duration-500 hover:border-[#4cc9f0]/70 hover:shadow-[0_0_28px_rgba(76,201,240,0.25)] xl:px-5 2xl:px-12 py-0;
       }
 
       img {
-        @apply w-full h-full object-contain rounded-xl;
+        @apply w-full h-full object-contain rounded-xl transition duration-500 ease-out hover:scale-105;
       }
 
       h2 {
@@ -271,7 +360,11 @@ section {
   }
 
   .tech-grid {
-    @apply grid xl:grid-cols-5 md:grid-cols-3 grid-cols-1 xl:gap-16 md:gap-10 gap-5 mt-16;
+    @apply grid grid-cols-1 md:grid-cols-3 xl:grid-cols-4 justify-center xl:gap-16 md:gap-10 gap-5 mt-16;
+
+    & > :last-child {
+      @apply md:col-start-2 xl:col-start-auto;
+    }
   }
 
   .tech-icon-wrapper {
@@ -297,6 +390,45 @@ section {
     }
   }
 
+  .contact-details {
+    @apply relative border-white-50/10 bg-[#17191f];
+
+    &::before {
+      content: "";
+      @apply absolute -right-20 -top-20 size-64 rounded-full bg-[#cd7c2e]/15 blur-3xl;
+    }
+
+    &::after {
+      content: "";
+      @apply absolute bottom-0 left-0 h-1 w-1/2 bg-[#cd7c2e];
+    }
+  }
+
+  .contact-link {
+    @apply flex items-center gap-4 rounded-xl border border-white-50/10 bg-white/5 p-4 transition-all duration-300 hover:-translate-y-1 hover:border-[#cd7c2e]/60 hover:bg-white/10;
+  }
+
+  .contact-icon {
+    @apply flex size-12 flex-none items-center justify-center rounded-lg bg-[#cd7c2e] text-black;
+  }
+
+  .contact-label,
+  .contact-value {
+    @apply block;
+  }
+
+  .contact-label {
+    @apply mb-1 text-xs uppercase tracking-widest text-white-50;
+  }
+
+  .contact-value {
+    @apply text-base font-semibold text-white md:text-lg;
+  }
+
+  .contact-arrow {
+    @apply ml-auto flex-none text-white-50 transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-[#cd7c2e];
+  }
+
   .footer {
     @apply my-10 md:mt-20 mt-10 text-white-50 px-5 md:px-20 xl:px-20 flex items-center justify-center;
 
@@ -313,6 +445,15 @@ section {
 
       .icon {
         @apply border border-black-50 bg-black-100 flex justify-center items-center rounded-xl size-10 md:size-12 cursor-pointer transition-all duration-500 hover:bg-black-50;
+      }
+
+      .github-icon {
+        @apply overflow-hidden;
+
+        img {
+          @apply size-full object-cover;
+          transform: scale(0.5);
+        }
       }
 
       img {

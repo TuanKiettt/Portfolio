@@ -5,18 +5,25 @@ const Footer = () => {
     <footer className="footer">
       <div className="footer-container">
         <div className="flex flex-col justify-center">
-          <p>Terms & Conditions</p>
+          <p></p>
         </div>
         <div className="socials">
-          {socialImgs.map((socialImg, index) => (
-            <div key={index} className="icon">
-              <img src={socialImg.imgPath} alt="social icon" />
-            </div>
+          {socialImgs.map((socialImg) => (
+            <a
+              key={socialImg.name}
+              className={`icon ${socialImg.name === "github" ? "github-icon" : ""}`}
+              href={socialImg.url}
+              target="_blank"
+              rel="noreferrer"
+              aria-label={`Visit my ${socialImg.name} profile`}
+            >
+              <img src={socialImg.imgPath} alt="" />
+            </a>
           ))}
         </div>
         <div className="flex flex-col justify-center">
           <p className="text-center md:text-end">
-            © {new Date().getFullYear()} Adrian Hajdin. All rights reserved.
+            © {new Date().getFullYear()} Nguyen Tuan Kiet. All rights reserved.
           </p>
         </div>
       </div>

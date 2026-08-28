@@ -48,16 +48,22 @@ const AppShowcase = () => {
       <div className="w-full">
         <div className="showcaselayout">
           <div ref={rydeRef} className="first-project-wrapper">
-            <div className="image-wrapper">
-              <img src="/images/project1.png" alt="Ryde App Interface" />
-            </div>
+            <a
+              href="https://github.com/TuanKiettt/ai_task_management_system"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="View AI Task Management App on GitHub"
+            >
+              <div className="image-wrapper ai-task-frame">
+                <img src="/images/AI-task.jpg" alt="AI Task Management App" />
+              </div>
+            </a>
             <div className="text-content">
               <h2>
-                On-Demand Rides Made Simple with a Powerful, User-Friendly App
-                called Ryde
+                Task Management App with AI Integration for Enhanced Productivity
               </h2>
               <p className="text-white-50 md:text-xl">
-                An app built with React Native, Expo, & TailwindCSS for a fast,
+                An app built with ReactJS, TailwindCSS and Node.js for a fast,
                 user-friendly experience.
               </p>
             </div>
@@ -65,20 +71,34 @@ const AppShowcase = () => {
 
           <div className="project-list-wrapper overflow-hidden">
             <div className="project" ref={libraryRef}>
-              <div className="image-wrapper bg-[#FFEFDB]">
-                <img
-                  src="/images/project2.png"
-                  alt="Library Management Platform"
-                />
-              </div>
-              <h2>The Library Management Platform</h2>
+              <a
+                href="https://github.com/TuanKiettt/WAD"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="View E-commerce Platform on GitHub"
+              >
+                <div className="image-wrapper bg-[#FFEFDB]">
+                  <img
+                    src="/images/E-commerce.jpg"
+                    alt="E-commerce Platform"
+                  />
+                </div>
+              </a>
+              <h2>The E-commerce Platform</h2>
             </div>
 
             <div className="project" ref={ycDirectoryRef}>
-              <div className="image-wrapper bg-[#FFE7EB]">
-                <img src="/images/project3.png" alt="YC Directory App" />
-              </div>
-              <h2>YC Directory - A Startup Showcase App</h2>
+              <a
+                href="https://github.com/TuanKiettt/React-Project"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="View Movie API App on GitHub"
+              >
+                <div className="image-wrapper bg-[#FFE7EB]">
+                  <img src="/images/Movie-API.png" alt="Movie API App" />
+                </div>
+              </a>
+              <h2>Movie Information App</h2>
             </div>
           </div>
         </div>

@@ -1,7 +1,5 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-
-import AnimatedCounter from "../components/AnimatedCounter";
 import Button from "../components/Button";
 import { words } from "../constants";
 import HeroExperience from "../components/models/hero_models/HeroExperience";
@@ -50,15 +48,14 @@ const Hero = () => {
               <h1>that Deliver Results</h1>
             </div>
 
-            <p className="text-white-50 md:text-xl relative z-10 pointer-events-none">
-              Hi, I’m Adrian, a developer based in Croatia with a passion for
-              code.
+            <p className="w-full max-w-xl break-words text-white-50 md:text-xl relative z-10 pointer-events-none">
+              Welcome to my portfolio. I craft responsive and visually engaging websites using React, TailwindCSS, Next.js, and modern technologies.
             </p>
 
             <Button
-              text="See My Work"
+              text="See My Projects"
               className="md:w-80 md:h-16 w-60 h-12"
-              id="counter"
+              id="work"
             />
           </div>
         </header>
@@ -70,8 +67,6 @@ const Hero = () => {
           </div>
         </figure>
       </div>
-
-      <AnimatedCounter />
     </section>
   );
 };

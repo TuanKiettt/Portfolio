@@ -1,8 +1,8 @@
 import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
+import { ArrowUpRight, Mail, Phone } from "lucide-react";
 
 import TitleHeader from "../components/TitleHeader";
-import ContactExperience from "../components/models/contact/ContactExperience";
 
 const Contact = () => {
   const formRef = useRef(null);
@@ -108,8 +108,51 @@ const Contact = () => {
             </div>
           </div>
           <div className="xl:col-span-7 min-h-96">
-            <div className="bg-[#cd7c2e] w-full h-full hover:cursor-grab rounded-3xl overflow-hidden">
-              <ContactExperience />
+            <div className="contact-details card-border rounded-3xl h-full min-h-96 p-8 md:p-12 flex flex-col justify-center overflow-hidden">
+              <div className="relative z-10">
+                <p className="text-[#cd7c2e] text-sm uppercase tracking-[0.25em] mb-4">
+                  Contact details
+                </p>
+                <h3 className="text-3xl md:text-5xl font-semibold text-white mb-4">
+                  Let&apos;s build something useful.
+                </h3>
+                <p className="text-white-50 max-w-xl mb-10">
+                  Have a project in mind? Reach out directly and let&apos;s start
+                  a conversation.
+                </p>
+
+                <address className="not-italic flex flex-col gap-4">
+                  <a
+                    href="tel:+84976365791"
+                    className="contact-link group"
+                  >
+                    <span className="contact-icon">
+                      <Phone size={22} strokeWidth={1.8} />
+                    </span>
+                    <span>
+                      <span className="contact-label">Phone</span>
+                      <span className="contact-value">+84 976 365 791</span>
+                    </span>
+                    <ArrowUpRight className="contact-arrow" size={20} />
+                  </a>
+
+                  <a
+                    href="mailto:ntkiet.work@gmail.com"
+                    className="contact-link group"
+                  >
+                    <span className="contact-icon">
+                      <Mail size={22} strokeWidth={1.8} />
+                    </span>
+                    <span>
+                      <span className="contact-label">Email</span>
+                      <span className="contact-value break-all">
+                        ntkiet.work@gmail.com
+                      </span>
+                    </span>
+                    <ArrowUpRight className="contact-arrow" size={20} />
+                  </a>
+                </address>
+              </div>
             </div>
           </div>
         </div>
