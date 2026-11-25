@@ -49,21 +49,21 @@ const AppShowcase = () => {
         <div className="showcaselayout">
           <div ref={rydeRef} className="first-project-wrapper">
             <a
-              href="https://github.com/TuanKiettt/ai_task_management_system"
+              href="https://chinese-learn-eight.vercel.app/"
               target="_blank"
               rel="noreferrer"
-              aria-label="View AI Task Management App on GitHub"
+              aria-label="View Chinese Learning Website"
             >
               <div className="image-wrapper ai-task-frame">
-                <img src="/images/AI-task.jpg" alt="AI Task Management App" />
+                <img src="/images/Chinese-Learn.png" alt="Chinese Learning Web" />
               </div>
             </a>
             <div className="text-content">
               <h2>
-                Task Management App with AI Integration for Enhanced Productivity
+                Chinese Learning Website for HSK1 to HSK 6
               </h2>
               <p className="text-white-50 md:text-xl">
-                An app built with ReactJS, TailwindCSS and Node.js for a fast,
+                An app built with Next.js, TailwindCSS and Node.js for a fast,
                 user-friendly experience.
               </p>
             </div>
@@ -89,16 +89,16 @@ const AppShowcase = () => {
 
             <div className="project" ref={ycDirectoryRef}>
               <a
-                href="https://github.com/TuanKiettt/React-Project"
+                href="https://github.com/TuanKiettt/ai_task_management_system"
                 target="_blank"
                 rel="noreferrer"
-                aria-label="View Movie API App on GitHub"
+                aria-label="View AI Task Management App on GitHub"
               >
                 <div className="image-wrapper bg-[#FFE7EB]">
-                  <img src="/images/Movie-API.png" alt="Movie API App" />
+                  <img src="/images/AI-task.jpg" alt="AI Task Management App" />
                 </div>
               </a>
-              <h2>Movie Information App</h2>
+              <h2>Task Management App with AI Integration for Enhanced Productivity</h2>
             </div>
           </div>
         </div>
